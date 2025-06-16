@@ -34,9 +34,9 @@ export default function Accueil() {
           </Link>
         </div>
         <motion.img
-          src={acceuilImg}
+          src=''
           alt=""
-          className="w-300 h-[540px] md:w-1/2 rounded-lg shadow-2xl mb-4 md:mb-0 object-cover"
+          className="w-full md:w-1/2 rounded-lg shadow-2xl mb-4 md:mb-0 object-cover"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
