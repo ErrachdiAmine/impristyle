@@ -15,8 +15,8 @@ export default function Footer() {
         {/* Links */}
         <div className="flex flex-col space-y-2">
           <h3 className="font-semibold">Quick Links</h3>
-          <a href="/upcoming" className="hover:text-gray-900">Other Products</a>
-          <a href="/activities" className="hover:text-gray-900">Upcoming Products</a>
+          <a href="#" className="hover:text-gray-900">Other Products</a>
+          <a href="#" className="hover:text-gray-900">Upcoming Products</a>
         </div>
 
         {/* Contact Info */}
