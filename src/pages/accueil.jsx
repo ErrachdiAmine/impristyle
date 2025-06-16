@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import acceuilImg from "../assets/ChatImage.png"
+
 
 export default function Accueil() {
   return (
@@ -32,9 +34,9 @@ export default function Accueil() {
           </Link>
         </div>
         <motion.img
-          src="/hero-image.png"
+          src={acceuilImg}
           alt=""
-          className="w-full md:w-1/2 rounded-lg shadow-2xl mb-8 md:mb-0 object-cover"
+          className="w-300 h-[540px] md:w-1/2 rounded-lg shadow-2xl mb-4 md:mb-0 object-cover"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
