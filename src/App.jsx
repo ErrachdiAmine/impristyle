@@ -6,7 +6,8 @@ import Scaffolder from './layout/scaffolder'
 import Produits from './pages/produits'
 import { RouterProvider, Route, Router, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Accueil from './pages/accueil'
-
+import { Analytics } from "@vercel/analytics/next"
+ 
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <>
+      <Analytics />
       <RouterProvider router={router} />
     </>
   )
