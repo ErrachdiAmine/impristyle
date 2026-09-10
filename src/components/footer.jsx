@@ -1,50 +1,49 @@
-// src/components/Footer.jsx
 import React from 'react';
-import { Instagram, Linkedin, Github, Mail } from 'lucide-react';
+import { Shirt, Heart, ShieldCheck, Truck, Sparkles } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white text-gray-800 border-t mt-12">
-      <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row md:justify-between gap-8">
-        {/* Brand */}
-        <div>
-          <h2 className="text-2xl font-bold">ImpriStyle</h2>
-          <p className="text-sm text-gray-600">Pour votre service!</p>
-        </div>
-
-        {/* Links */}
-        <div className="flex flex-col space-y-2">
-          <h3 className="font-semibold">Quick Links</h3>
-          <a href="#" className="hover:text-gray-900">Other Products</a>
-          <a href="#" className="hover:text-gray-900">Upcoming Products</a>
-        </div>
-
-        {/* Contact Info */}
-        <div className="flex flex-col space-y-2">
-          <h3 className="font-semibold">Contact Us</h3>
-          <a href="mailto:contact@impristyle.com" className="hover:text-gray-900 flex items-center">
-            <Mail className="mr-2" size={18} /> contact@impristyle.com
-          </a>
-          <div className="flex space-x-4 pt-2">
-            <a href="https://instagram.com/impristyle" target="_blank" rel="noopener noreferrer">
-              <Instagram className="hover:text-pink-500" size={24} />
-            </a>
-            <a href="https://wa.me/YOURNUMBER" target="_blank" rel="noopener noreferrer">
-              <Mail className="hover:text-green-500" size={24} /> 
-            </a>
-            <a href="https://linkedin.com/company/impristyle" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="hover:text-blue-500" size={24} />
-            </a>
-            <a href="https://github.com/impristyle" target="_blank" rel="noopener noreferrer">
-              <Github className="hover:text-gray-700" size={24} />
-            </a>
+    <footer className="glass-panel border-t border-white/10 mt-24 py-12 px-4 sm:px-8 text-neutral-400 text-xs">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="md:col-span-2 space-y-3">
+          <div className="flex items-center gap-2 text-white font-mono font-bold text-base">
+            <Shirt className="text-emerald-400" size={18} />
+            <span>ImpriStyle Lab</span>
           </div>
+          <p className="text-neutral-400 leading-relaxed max-w-sm">
+            Plateforme de personnalisation de vêtements et streetwear à la demande. Coton biologique premium, impression numérique directe haute définition et expédition soignée.
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <h4 className="text-white font-bold font-mono uppercase tracking-wider text-[11px]">Garanties</h4>
+          <ul className="space-y-1.5 text-neutral-400">
+            <li className="flex items-center gap-1.5">
+              <ShieldCheck size={13} className="text-emerald-400" />
+              <span>Impression DTG 300 DPI</span>
+            </li>
+            <li className="flex items-center gap-1.5">
+              <Truck size={13} className="text-emerald-400" />
+              <span>Livraison Express & Suivie</span>
+            </li>
+            <li className="flex items-center gap-1.5">
+              <Sparkles size={13} className="text-emerald-400" />
+              <span>100% Coton Ring-Spun</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="space-y-2">
+          <h4 className="text-white font-bold font-mono uppercase tracking-wider text-[11px]">Contact & Support</h4>
+          <p className="text-neutral-400">Maroc & International</p>
+          <p className="text-emerald-400 font-mono">support@impristyle.lab</p>
         </div>
       </div>
 
-      <div className="text-center text-xs text-gray-500 pt-6">
-        © {new Date().getFullYear()} ImpriStyle. All rights reserved.
+      <div className="max-w-7xl mx-auto pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-neutral-500">
+        <div>© {new Date().getFullYear()} ImpriStyle Lab • Conçu par Amine Errachdi</div>
+        <div className="font-mono">Fait avec passion & Next-Gen Workflows</div>
       </div>
     </footer>
-);
+  );
 }

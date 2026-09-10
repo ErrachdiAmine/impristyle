@@ -1,43 +1,62 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { ShoppingBag, Sparkles, Shirt, Layers } from 'lucide-react';
 
+export default function Navbar({ cartCount = 0, onOpenCart }) {
+  const location = useLocation();
 
-export default function Navbar() {
   return (
-    <nav className="w-full bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <nav className="sticky top-0 z-50 glass-panel border-b border-white/10 px-4 sm:px-8 py-4 backdrop-blur-xl">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand */}
-        <Link to="/" className="text-2xl font-extrabold text-gray-900 hover:text-gray-700 transition-colors">
-          ImpriStyle
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:scale-105 transition-transform">
+            <Shirt size={18} className="text-white" />
+          </div>
+          <div>
+            <span className="text-base sm:text-lg font-black tracking-tight text-white font-mono flex items-center gap-1.5">
+              Impri<span className="text-emerald-400">Style</span>
+              <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">LAB</span>
+            </span>
+          </div>
         </Link>
 
         {/* Links */}
-        <ul className="hidden md:flex space-x-8">
-          <li>
-            <Link
-              to="/"
-              className="text-gray-700 font-medium hover:text-gray-900 transition-colors"
-            >
-              Accueil
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/produits"
-              className="text-gray-700 font-medium hover:text-gray-900 transition-colors"
-            >
-              Produits
-            </Link>
-          </li>
-        </ul>
+        <div className="flex items-center gap-2 sm:gap-6 text-xs sm:text-sm font-medium">
+          <Link
+            to="/"
+            className={`transition-colors ${
+              location.pathname === '/' ? 'text-emerald-400 font-bold' : 'text-neutral-400 hover:text-white'
+            }`}
+          >
+            Studio & Accueil
+          </Link>
+          <Link
+            to="/produits"
+            className={`transition-colors ${
+              location.pathname === '/produits' ? 'text-emerald-400 font-bold' : 'text-neutral-400 hover:text-white'
+            }`}
+          >
+            Collection Streetwear
+          </Link>
+        </div>
 
-        <button className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors">
-          <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+        {/* Cart Button */}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onOpenCart}
+            className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] hover:bg-white/10 border border-white/10 text-neutral-200 hover:text-white transition-all cursor-pointer relative"
+          >
+            <ShoppingBag size={15} className="text-emerald-400" />
+            <span className="text-xs font-semibold hidden sm:inline">Panier</span>
+            {cartCount > 0 && (
+              <span className="w-5 h-5 rounded-full bg-emerald-500 text-black text-[10px] font-black flex items-center justify-center font-mono">
+                {cartCount}
+              </span>
+            )}
+          </button>
+        </div>
       </div>
     </nav>
   );
-
 }
